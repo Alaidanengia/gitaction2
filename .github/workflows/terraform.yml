@@ -87,7 +87,7 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.AWSKEYID }}
         aws-secret-access-key: ${{ secrets.AWSSECRETKEY }}
-        aws-region: us-west-2
+        aws-region: us-east-1
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
