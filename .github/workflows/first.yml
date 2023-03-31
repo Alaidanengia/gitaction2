@@ -2,6 +2,10 @@ name: shell commands
 
 on:
   - push
+
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWSKEYID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWSSECRETKEY }}
  
 
 jobs:
