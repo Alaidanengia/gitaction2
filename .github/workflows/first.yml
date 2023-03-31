@@ -10,22 +10,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: echo string
-        run: echo "Hello Ala"
+      - name: Set-up terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.1.9
+      - name: Terraform Init
+        run: terraform init
+      - name: Terraform Validate
+        run: terraform validate
       - name: Multi line string
         run: |
           pwd
           node -v
           ls -a
-      - name: python command
-        run: |
-          import platform
-          print(platform.processor())
-        shell: python
-  run-windows-commands:
-    runs-on: windows-latest
-    needs: ["run-shell-commands"]
-    steps:
-      - name: Directory
-        run: pwd
-        shell: bash
+     
+  
