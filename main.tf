@@ -1,3 +1,7 @@
+provider "aws" { 
+  region  = "us-east-1"
+}
+
 resource "aws_s3_bucket" "ticket1" {
   bucket = "terra1-bucket"
 
