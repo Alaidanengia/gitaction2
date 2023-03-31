@@ -1,19 +1,9 @@
-provider "aws" { 
-  region  = "us-east-2"
+provider "aws" {
+  region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "ticket1" {
-  bucket = "terra1-bucket"
-
-  tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
-  }
-}
-
-resource "aws_s3_bucket_acl" "terra1-acl" {
-  bucket = aws_s3_bucket.ticket1.id
-  acl    = "private"
+resource "aws_s3_bucket" "terrabucket1" {
+  bucket = "terrabucket1-name"
 }
 
 /* provider "aws" { 
