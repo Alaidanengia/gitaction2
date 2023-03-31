@@ -1,4 +1,18 @@
-provider "aws" { 
+resource "aws_s3_bucket" "ticket1" {
+  bucket = "terra1-bucket"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
+
+resource "aws_s3_bucket_acl" "terra1-acl" {
+  bucket = aws_s3_bucket.ticket1.id
+  acl    = "private"
+}
+
+/* provider "aws" { 
   region  = "us-east-1"
 }
 
@@ -9,7 +23,7 @@ resource "aws_vpc" "vpc1" {
     Name = "Class30"
   }
 
-}
+} */
 
 /* 
 # The configuration for the `remote` backend.
