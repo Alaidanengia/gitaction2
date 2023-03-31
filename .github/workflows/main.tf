@@ -1,3 +1,17 @@
+provider "aws" { 
+  region  = "us-east-1"
+}
+
+resource "aws_vpc" "vpc1" {
+  cidr_block: "10.0.0.0/16"
+
+  tags = {
+    Name = "Class30"
+  }
+
+}
+
+/* 
 # The configuration for the `remote` backend.
 terraform {
   required_version = "~> 1.0"         #1.1.4/5/6/7   1.2/3/4/5 1.1.4/5/6/7
@@ -31,9 +45,7 @@ resource "aws_s3_bucket" "my_bucket" {
   }
 }
 
-provider "aws" { 
-  region  = "us-east-1"
-}
+
 
 resource "aws_vpc" "terravpc" {
   cidr_block       = "10.0.0.0/16"
@@ -44,4 +56,4 @@ resource "aws_vpc" "terravpc" {
   }
 }
 
-     
+      */
