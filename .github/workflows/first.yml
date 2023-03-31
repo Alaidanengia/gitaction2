@@ -5,7 +5,7 @@ on:
  
 
 jobs:
-  run-shell-commands:
+  terraform-workflow:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,10 +18,8 @@ jobs:
         run: terraform init
       - name: Terraform Validate
         run: terraform validate
-      - name: Multi line string
-        run: |
-          pwd
-          node -v
-          ls -a
+      - name: Terraform Validate
+        run: terraform validate
+      
      
   
