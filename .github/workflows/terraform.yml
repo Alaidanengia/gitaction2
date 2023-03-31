@@ -52,6 +52,10 @@ on:
 permissions:
   contents: read
 
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWSKEYID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWSSECRETKEY }}
+
 jobs:
   terraform:
     name: 'Terraform'
@@ -82,12 +86,12 @@ jobs:
     - name: Terraform Format
       run: terraform fmt -check
 
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWSKEYID }}
-        aws-secret-access-key: ${{ secrets.AWSSECRETKEY }}
-        aws-region: us-east-1
+    # - name: Configure AWS credentials
+    #   uses: aws-actions/configure-aws-credentials@v1
+    #   with:
+    #     aws-access-key-id: ${{ secrets.AWSKEYID }}
+    #     aws-secret-access-key: ${{ secrets.AWSSECRETKEY }}
+    #     aws-region: us-east-1
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
