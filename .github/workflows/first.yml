@@ -9,6 +9,14 @@ env:
  
 
 jobs:
+  test-pwd:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check linux pw directory
+        run: |
+          ls
+          pwd
+
   terraform-workflow:
     runs-on: ubuntu-latest
     steps:
